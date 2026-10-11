@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ons Bahri — Embedded Systems & IoT Engineer</title>
+  <meta name="description" content="Ons Bahri, Embedded Systems & IoT engineer based in Nice, France. Embedded firmware (C/C++, FreeRTOS, BLE, MQTT), ROS2 robotics and connected apps. Looking for a first full-time role.">
+  <meta property="og:title" content="Ons Bahri — Embedded Systems & IoT Engineer">
+  <meta property="og:description" content="Double degree (Engineering + MSc IoT & CPS). Looking for a first role in embedded software or IoT.">
+  <meta property="og:image" content="https://ons0bahri.github.io/Ons-BAHRI-Portfolio/assets/img/hero.jpg">
+  <meta name="theme-color" content="#854fee">
+  <link rel="alternate" hreflang="fr" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 19V5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5M19.1 4.9C23 8.8 23 15.1 19.1 19"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6.5L4.5 19a1.5 1.5 0 0 0 1.3 2.2h12.4a1.5 1.5 0 0 0 1.3-2.2L14 9.5V3"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M6 11v2M10 11v2"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10l-2.7-3.6A2 2 0 0 0 13.7 6H7.4a2 2 0 0 0-1.8 1.1L4 10l-1.4.5C1.9 10.8 1 11.6 1 12.5V16c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></symbol>
+  </svg>
+
+  <!-- Animated background -->
+  <div class="bg-fx" aria-hidden="true">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <canvas id="net"></canvas>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="container">
+      <a class="nav-logo" href="#top" aria-label="Ons Bahri — home"><img src="assets/img/logo.png" alt="Ons Bahri"></a>
+      <nav class="nav-links" id="menu" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang" role="group" aria-label="Language">
+          <a href="index.html" hreflang="fr">FR</a>
+          <a class="on" href="en.html" hreflang="en" aria-current="true">EN</a>
+        </div>
+        <a class="btn btn-primary btn-sm" href="assets/cv/CV_Ons-Bahri.pdf" download><svg class="i"><use href="#i-download"/></svg>CV</a>
+        <button class="menu-btn" aria-label="Menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1 class="reveal d1">Ons <span class="grad-text">Bahri</span></h1>
+          <p class="role reveal d1">Embedded Systems &amp; IoT Engineer</p>
+          <p class="lead reveal d2">I design end-to-end connected systems: from embedded firmware (C/C++, FreeRTOS, BLE, MQTT) to the mobile app, including ROS2 robotics.</p>
+          <div class="cta reveal d2">
+            <a class="btn btn-primary" href="#contact"><svg class="i"><use href="#i-mail"/></svg>Get in touch</a>
+            <a class="btn btn-ghost" href="assets/cv/CV_Ons-Bahri.pdf" download><svg class="i"><use href="#i-download"/></svg>Download my CV</a>
+          </div>
+          <div class="meta reveal d3">
+            <span><svg class="i"><use href="#i-pin"/></svg>Nice, France</span>
+            <span><svg class="i"><use href="#i-grad"/></svg>Engineering degree + MSc IoT &amp; CPS</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal d2">
+          <div class="hero-card"><img src="assets/img/hero.jpg" alt="Ons Bahri — illustration" width="710" height="620"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-img reveal"><img src="assets/img/about.jpg" alt="Hello illustration" width="710" height="620" loading="lazy"></div>
+        <div class="about-text">
+          <span class="eyebrow reveal">About</span>
+          <h2 class="section-title reveal">From firmware to app, <span class="grad-text">I love building the whole thing.</span></h2>
+          <p class="reveal d1" style="margin-top:20px">Embedded Systems &amp; IoT engineer with a double degree: an Engineering degree in Embedded, Ambient &amp; Mobile Software Systems (ESPRIT) and an MSc in IoT &amp; Cyber-Physical Systems (Université Côte d'Azur).</p>
+          <p class="reveal d1">I gained my experience through industrial internships (Capgemini Engineering, ACTIA), a research lab (i3S) and many IoT and robotics projects. I am now looking for <strong>my first full-time role in embedded software or IoT</strong>.</p>
+          <div class="highlights">
+            <div class="highlight reveal d1"><span class="ico"><svg class="i"><use href="#i-cpu"/></svg></span><div><b>Embedded software</b><span>C/C++, ESP-IDF, FreeRTOS, memory constraints</span></div></div>
+            <div class="highlight reveal d2"><span class="ico"><svg class="i"><use href="#i-radio"/></svg></span><div><b>Connected systems</b><span>BLE, MQTT, ESP-NOW, Wi-Fi, TCP/UDP</span></div></div>
+            <div class="highlight reveal d2"><span class="ico"><svg class="i"><use href="#i-bot"/></svg></span><div><b>Robotics</b><span>ROS2, 3D perception, vision, navigation</span></div></div>
+            <div class="highlight reveal d3"><span class="ico"><svg class="i"><use href="#i-code"/></svg></span><div><b>Full-stack IoT</b><span>Flutter, Node.js, Spring, Firebase</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">Experience</span>
+          <h2 class="section-title reveal">Professional experience</h2>
+          <p class="section-sub reveal d1">Three internships across automotive, engineering services and research.</p>
+        </div>
+        <div class="timeline">
+          <article class="t-item reveal">
+            <div class="t-dot"><svg class="i"><use href="#i-flask"/></svg></div>
+            <div class="card t-card">
+              <div class="t-top">
+                <div>
+                  <h3>Master's thesis internship</h3>
+                  <div class="t-org">Université Côte d'Azur — Laboratoire i3S · France</div>
+                </div>
+                <span class="t-date">03/2026 – 09/2026</span>
+              </div>
+              <p class="subject">Smart alert-management service for building infrastructure (GECOS)</p>
+              <ul>
+                <li>Implemented a <em>Direct Cause Analysis</em> engine based on a dependency graph (Neo4j).</li>
+                <li>Integrated it into the GECOS monitoring backend for real-time alert correlation and summarisation.</li>
+              </ul>
+              <div class="tags"><span class="tag">Neo4j</span><span class="tag">Dependency graphs</span><span class="tag">Backend</span><span class="tag">Real-time</span></div>
+            </div>
+          </article>
+
+          <article class="t-item reveal">
+            <div class="t-dot"><svg class="i"><use href="#i-battery"/></svg></div>
+            <div class="card t-card">
+              <div class="t-top">
+                <div>
+                  <h3>Embedded Systems Intern</h3>
+                  <div class="t-org">Capgemini Engineering &amp; Altran Telnet Corporation · Tunisia</div>
+                </div>
+                <span class="t-date">06/2025 – 08/2025</span>
+              </div>
+              <p class="subject">Wireless Battery Management System (BMS) for electric vehicles</p>
+              <ul>
+                <li>Built a wireless ESP32 – Raspberry Pi BMS prototype for data acquisition and aggregation (voltage, current, temperature).</li>
+                <li>Designed a hybrid ESP-NOW / TCP communication architecture for battery-pack monitoring.</li>
+              </ul>
+              <div class="tags"><span class="tag">ESP32</span><span class="tag">Raspberry Pi</span><span class="tag">ESP-NOW</span><span class="tag">TCP</span><span class="tag">Sensors</span></div>
+            </div>
+          </article>
+
+          <article class="t-item reveal">
+            <div class="t-dot"><svg class="i"><use href="#i-radio"/></svg></div>
+            <div class="card t-card">
+              <div class="t-top">
+                <div>
+                  <h3>IoT Intern</h3>
+                  <div class="t-org">ACTIA Engineering Services · Tunisia</div>
+                </div>
+                <span class="t-date">06/2024 – 08/2024</span>
+              </div>
+              <p class="subject">BLE-based battery monitoring prototype on ESP32</p>
+              <ul>
+                <li>BMS prototype on ESP32 using BLE (GATT, packet fragmentation).</li>
+                <li>Real-time data transmission and analysis on a smartphone.</li>
+              </ul>
+              <div class="tags"><span class="tag">ESP32</span><span class="tag">BLE / GATT</span><span class="tag">Mobile</span><span class="tag">Real-time</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">Education</span>
+          <h2 class="section-title reveal">Academic background</h2>
+          <p class="section-sub reveal d1">A French–Tunisian double degree focused on embedded systems, IoT and cyber-physical systems.</p>
+        </div>
+        <div class="edu-grid">
+          <article class="card edu reveal">
+            <span class="t-date">2025 – 2026</span>
+            <h3>MSc IoT &amp; Cyber-Physical Systems</h3>
+            <div class="school">Université Côte d'Azur — Polytech Nice Sophia</div>
+            <div class="award"><svg class="i"><use href="#i-award"/></svg><span>Ranked 1st in class</span></div>
+          </article>
+          <article class="card edu reveal d1">
+            <span class="t-date">2023 – 2026</span>
+            <h3>Engineering Degree — Embedded, Ambient &amp; Mobile Software Systems</h3>
+            <div class="school">ESPRIT — Private Higher School of Engineering and Technology</div>
+            <div class="award"><svg class="i"><use href="#i-award"/></svg><span>16/20 in specialisation year — highest honours</span></div>
+          </article>
+          <article class="card edu reveal d2">
+            <span class="t-date">2021 – 2023</span>
+            <h3>Integrated Preparatory Cycle — Mathematics &amp; Computer Science</h3>
+            <div class="school">ISIMM — Higher Institute of Computer Science and Mathematics of Monastir</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">Projects</span>
+          <h2 class="section-title reveal">Selected work</h2>
+          <p class="section-sub reveal d1">Robotics, IoT, embedded and web: projects taken from hardware prototype all the way to the application.</p>
+        </div>
+        <div class="filters reveal" role="group" aria-label="Filter projects">
+          <button class="filter on" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="robotics" aria-pressed="false">Robotics</button>
+          <button class="filter" data-filter="iot" aria-pressed="false">IoT</button>
+          <button class="filter" data-filter="embedded" aria-pressed="false">Embedded</button>
+          <button class="filter" data-filter="web" aria-pressed="false">Web</button>
+        </div>
+        <div class="projects">
+          <article class="card project reveal" data-cat="robotics embedded iot">
+            <div class="p-ico"><svg class="i"><use href="#i-bot"/></svg></div>
+            <span class="p-cat">Robotics · Embedded AI</span>
+            <h3>PIKO — AI companion robot</h3>
+            <p>Real-time audio pipeline, conversational AI integration, FreeRTOS multitasking under tight memory constraints, and BLE/Wi-Fi communication with a mobile app.</p>
+            <div class="tags"><span class="tag">ESP32-S3</span><span class="tag">ESP-IDF</span><span class="tag">FreeRTOS</span><span class="tag">C/C++</span><span class="tag">I2S</span><span class="tag">BLE</span><span class="tag">WebSocket</span><span class="tag">Gemini Live</span><span class="tag">Flutter</span></div>
+          </article>
+          <article class="card project reveal d1" data-cat="robotics">
+            <div class="p-ico"><svg class="i"><use href="#i-box"/></svg></div>
+            <span class="p-cat">Robotics · Perception</span>
+            <h3>3D perception for a mobile robot</h3>
+            <p>3D point-cloud segmentation and transformation for navigation. Acquisition, filtering and obstacle-detection pipeline using a RealSense D435i camera.</p>
+            <div class="tags"><span class="tag">RealSense</span><span class="tag">ROS2</span><span class="tag">Python</span><span class="tag">Open3D</span><span class="tag">Raspberry Pi</span></div>
+          </article>
+          <article class="card project reveal d2" data-cat="robotics">
+            <div class="p-ico"><svg class="i"><use href="#i-hand"/></svg></div>
+            <span class="p-cat">Robotics · Vision</span>
+            <h3>TurtleBot3 — Autonomous navigation &amp; gesture vision</h3>
+            <p>Set up a TurtleBot3 on ROS2 with navigation nodes, camera streaming and gesture-based control.</p>
+            <div class="tags"><span class="tag">ROS2</span><span class="tag">TurtleBot3</span><span class="tag">LiDAR</span><span class="tag">OpenCV</span><span class="tag">MediaPipe</span></div>
+          </article>
+          <article class="card project reveal" data-cat="iot">
+            <div class="p-ico"><svg class="i"><use href="#i-car"/></svg></div>
+            <span class="p-cat">IoT · Digital twin</span>
+            <h3>OptiPark — Smart Parking</h3>
+            <p>Smart-parking IoT system: sensors, a physical scale model and a real-time interactive virtual replica of the car park, with MQTT communication and monitoring.</p>
+            <div class="tags"><span class="tag">ESP32</span><span class="tag">MQTT</span><span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">Firebase</span><span class="tag">Flutter</span></div>
+          </article>
+          <article class="card project reveal d1" data-cat="iot">
+            <div class="p-ico"><svg class="i"><use href="#i-coffee"/></svg></div>
+            <span class="p-cat">IoT · Monitoring</span>
+            <h3>Smart Coffee House</h3>
+            <p>ESP32 sensor/actuator nodes, MQTT communication, monitoring through Raspberry Pi and Node-RED, and real-time control from a web app.</p>
+            <div class="tags"><span class="tag">ESP32</span><span class="tag">MQTT</span><span class="tag">Node-RED</span><span class="tag">Firebase</span><span class="tag">Raspberry Pi</span></div>
+          </article>
+          <article class="card project reveal d2" data-cat="embedded iot">
+            <div class="p-ico"><svg class="i"><use href="#i-cart"/></svg></div>
+            <span class="p-cat">Embedded · Protocols</span>
+            <h3>Smart Mini-Market</h3>
+            <p>Smart mini-market: sensors, NRF wireless communication, monitoring, alarm system and data logging.</p>
+            <div class="tags"><span class="tag">Arduino Mega</span><span class="tag">NRF24</span><span class="tag">I²C</span><span class="tag">SPI</span><span class="tag">UART</span></div>
+          </article>
+          <article class="card project reveal" data-cat="iot embedded">
+            <div class="p-ico"><svg class="i"><use href="#i-home"/></svg></div>
+            <span class="p-cat">IoT · Smart home</span>
+            <h3>AuraHome — Smart Home</h3>
+            <p>Smart home system with lighting, security alarms and environmental monitoring (gas, flame, rain), controlled from the Blynk app with real-time feedback.</p>
+            <div class="tags"><span class="tag">ESP32</span><span class="tag">Blynk</span><span class="tag">Wi-Fi</span><span class="tag">NRF</span><span class="tag">Arduino IDE</span><span class="tag">Proteus</span><span class="tag">SolidWorks</span></div>
+          </article>
+          <article class="card project reveal d1" data-cat="web">
+            <div class="p-ico"><svg class="i"><use href="#i-layers"/></svg></div>
+            <span class="p-cat">Web · Full-stack</span>
+            <h3>Factory Management System</h3>
+            <p>Full-stack factory management app (users, production lines, products): secure authentication and role-based access with Spring Security, action logging and CSV export of production statistics.</p>
+            <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Spring Security</span><span class="tag">Angular</span><span class="tag">TypeScript</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">Skills</span>
+          <h2 class="section-title reveal">Technical toolbox</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="card skill reveal">
+            <h3><span class="ico"><svg class="i"><use href="#i-code"/></svg></span>Languages &amp; Frameworks</h3>
+            <div class="tags"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">Node.js</span><span class="tag">Spring</span><span class="tag">Flutter</span></div>
+          </div>
+          <div class="card skill reveal d1">
+            <h3><span class="ico"><svg class="i"><use href="#i-radio"/></svg></span>Protocols &amp; Communication</h3>
+            <div class="tags"><span class="tag">MQTT</span><span class="tag">HTTP</span><span class="tag">TCP</span><span class="tag">UDP</span><span class="tag">BLE</span><span class="tag">Wi-Fi</span><span class="tag">ESP-NOW</span><span class="tag">NRF</span><span class="tag">I²C</span><span class="tag">SPI</span><span class="tag">UART</span></div>
+          </div>
+          <div class="card skill reveal d2">
+            <h3><span class="ico"><svg class="i"><use href="#i-tool"/></svg></span>Tools &amp; Technologies</h3>
+            <div class="tags"><span class="tag">ESP-IDF</span><span class="tag">FreeRTOS</span><span class="tag">ROS2</span><span class="tag">Docker</span><span class="tag">Node-RED</span><span class="tag">Neo4j</span><span class="tag">InfluxDB</span><span class="tag">Android Studio</span><span class="tag">Postman</span><span class="tag">Swagger</span><span class="tag">Kanboard</span></div>
+          </div>
+        </div>
+
+        <div class="soft-langs">
+          <div class="card soft reveal">
+            <h3 style="font-size:17px;margin-bottom:18px">Soft skills</h3>
+            <ul>
+              <li><svg class="i"><use href="#i-check"/></svg>Fast learner &amp; adaptable</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Autonomous &amp; proactive</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Emotional intelligence &amp; teamwork</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Leadership &amp; initiative</li>
+            </ul>
+          </div>
+          <div class="card langs reveal d1">
+            <h3 style="font-size:17px;margin-bottom:18px">Languages</h3>
+            <div class="lang-row"><div class="l-top"><b>Arabic</b><span>Native</span></div><div class="bar"><i style="--w:100%"></i></div></div>
+            <div class="lang-row"><div class="l-top"><b>French</b><span>B2</span></div><div class="bar"><i style="--w:72%"></i></div></div>
+            <div class="lang-row"><div class="l-top"><b>English</b><span>B2</span></div><div class="bar"><i style="--w:72%"></i></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagement -->
+    <section id="engagement">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">Involvement</span>
+          <h2 class="section-title reveal">Community &amp; entrepreneurship</h2>
+        </div>
+        <div class="engage-grid">
+          <article class="card engage reveal">
+            <span class="p-cat">Student entrepreneur · 2026 – 2027</span>
+            <h3>PikoCraft Academy</h3>
+            <div class="sub">Founder</div>
+            <ul>
+              <li>Designing an educational robotics platform for children.</li>
+              <li>Creating hands-on activities to introduce young people to robotics and STEM.</li>
+            </ul>
+          </article>
+          <article class="card engage reveal d1">
+            <span class="p-cat">Robotics Club</span>
+            <h3>President &amp; technical lead</h3>
+            <div class="sub">Two 2<sup>nd</sup>-place finishes in national competitions</div>
+            <ul>
+              <li>Led the team, organised events and ran workshops.</li>
+              <li>Competed in national robotics competitions.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h2>I am looking for my first role in embedded software or IoT.</h2>
+            <p>Newly graduated engineer, available and motivated. Let's talk about how I can contribute to your team.</p>
+          </div>
+          <div class="contact-list">
+            <a class="contact-item" href="mailto:ons.b@outlook.com?subject=Opportunity%20-%20Embedded%20%2F%20IoT%20Engineer"><svg class="i"><use href="#i-mail"/></svg><div><small>Email</small><b>ons.b@outlook.com</b></div></a>
+            <a class="contact-item" href="tel:+33660054369"><svg class="i"><use href="#i-phone"/></svg><div><small>Phone</small><b>+33 6 60 05 43 69</b></div></a>
+            <a class="contact-item" href="https://www.linkedin.com/in/ons-bahri" target="_blank" rel="noopener"><svg class="i"><use href="#i-linkedin"/></svg><div><small>LinkedIn</small><b>in/ons-bahri</b></div></a>
+            <a class="contact-item" href="assets/cv/CV_Ons-Bahri.pdf" download><svg class="i"><use href="#i-download"/></svg><div><small>CV (PDF)</small><b>Download my CV</b></div></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <img src="assets/img/logo.png" alt="Ons Bahri">
+      <span>© <span id="year">2026</span> Ons Bahri · Embedded Systems &amp; IoT Engineer · Nice, France</span>
+      <div class="socials">
+        <a href="tel:+33660054369" aria-label="Phone"><svg class="i"><use href="#i-phone"/></svg></a>
+        <a href="mailto:ons.b@outlook.com" aria-label="Email"><svg class="i"><use href="#i-mail"/></svg></a>
+        <a href="https://www.linkedin.com/in/ons-bahri" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i"><use href="#i-linkedin"/></svg></a>
+        <a href="https://github.com/ONS0BAHRI" target="_blank" rel="noopener" aria-label="GitHub"><svg class="i"><use href="#i-github"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Back to top"><svg class="i"><use href="#i-up"/></svg></button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
