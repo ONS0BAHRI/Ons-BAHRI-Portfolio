@@ -10,7 +10,7 @@ Bienvenue sur mon portfolio ! Je suis ingénieure Systèmes Embarqués & IoT, ba
 
 <p align="center">
   <a href="https://ons0bahri.github.io/Ons-BAHRI-Portfolio/">
-    <img src="assets/img/qr-code.svg" alt="QR code vers mon portfolio" width="220">
+    <img src="assets/img/qr-portfolio.svg" alt="QR code vers mon portfolio" width="220">
   </a>
   <br>
   <sub>Scannez pour ouvrir mon portfolio · Scan to open my portfolio</sub>
