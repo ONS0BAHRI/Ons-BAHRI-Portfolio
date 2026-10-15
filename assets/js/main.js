@@ -122,15 +122,36 @@
   });
   links.forEach(function (l) { l.addEventListener("click", function () { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }); });
 
-  /* ---------- Reveal on scroll ---------- */
-  var reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && !reduceMotion) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("in"); });
+  /* ---------- Business card: tilt + glare on hover, 3D flip on click ---------- */
+  var card = document.querySelector(".bcard");
+  if (card) {
+    var fine = window.matchMedia("(pointer: fine)").matches;
+    var flipTimer;
+    if (fine && !reduceMotion) {
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        card.classList.add("tracking");
+        card.style.setProperty("--ry", ((x - .5) * 22).toFixed(2) + "deg");
+        card.style.setProperty("--rx", ((.5 - y) * 16).toFixed(2) + "deg");
+        card.style.setProperty("--gx", (x * 100).toFixed(1) + "%");
+        card.style.setProperty("--gy", (y * 100).toFixed(1) + "%");
+      });
+      card.addEventListener("pointerleave", function () {
+        card.classList.remove("tracking");
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+      });
+    }
+    card.addEventListener("click", function () {
+      var flipped = card.classList.toggle("flipped");
+      card.setAttribute("aria-pressed", flipped);
+      card.classList.remove("flipping");
+      void card.offsetWidth; // restart the sheen animation
+      card.classList.add("flipping");
+      clearTimeout(flipTimer);
+      flipTimer = setTimeout(function () { card.classList.remove("flipping"); }, 1200);
+    });
   }
 
   /* ---------- Project filters ---------- */

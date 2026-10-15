@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
 </head>
 <body>
 
@@ -49,6 +49,7 @@
     <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
     <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></symbol>
   </svg>
 
@@ -242,6 +243,13 @@
           <button class="filter" data-filter="web" aria-pressed="false">Web</button>
         </div>
         <div class="projects">
+          <article class="card project reveal" data-cat="embedded">
+            <div class="p-ico"><svg class="i"><use href="#i-gauge"/></svg></div>
+            <span class="p-cat">Embedded · Test &amp; Validation</span>
+            <h3>Automated sensor test bench — SIL/HIL validation</h3>
+            <p>Test bench for an MPU6050 accelerometer: controlled stimuli, signal processing (FFT, filtering), 12 automated characterisation tests with OK/KO verdicts, reports, traceability and continuous integration.</p>
+            <div class="tags"><span class="tag">ESP32</span><span class="tag">MPU6050</span><span class="tag">I²C</span><span class="tag">Python</span><span class="tag">pytest</span><span class="tag">FFT</span><span class="tag">CI</span></div>
+          </article>
           <article class="card project reveal" data-cat="robotics embedded iot">
             <div class="p-ico"><svg class="i"><use href="#i-bot"/></svg></div>
             <span class="p-cat">Robotics · Embedded AI</span>
@@ -307,7 +315,7 @@
       <div class="container">
         <div class="section-head">
           <span class="eyebrow reveal">Skills</span>
-          <h2 class="section-title reveal">Technical toolbox</h2>
+          <h2 class="section-title reveal">Technical skills</h2>
         </div>
         <div class="skills-grid">
           <div class="card skill reveal">
@@ -377,17 +385,31 @@
     <!-- Contact -->
     <section id="contact">
       <div class="container">
-        <div class="cta-box reveal">
-          <div>
-            <span class="eyebrow">Contact</span>
-            <h2>I am looking for my first role in embedded software or IoT.</h2>
-            <p>Newly graduated engineer, available and motivated. Let's talk about how I can contribute to your team.</p>
+        <div class="contact-grid">
+          <div class="cta-box reveal">
+            <div>
+              <span class="eyebrow">Contact</span>
+              <h2>I am looking for my first role in embedded software or IoT.</h2>
+              <p>Newly graduated engineer, available and motivated. Let's talk about how I can contribute to your team.</p>
+              <div class="contact-list">
+                <a class="contact-item" href="mailto:ons.b@outlook.com?subject=Opportunity%20-%20Embedded%20%2F%20IoT%20Engineer"><svg class="i"><use href="#i-mail"/></svg><div><small>Email</small><b>ons.b@outlook.com</b></div></a>
+                <a class="contact-item" href="tel:+33660054369"><svg class="i"><use href="#i-phone"/></svg><div><small>Phone</small><b>+33 6 60 05 43 69</b></div></a>
+                <a class="contact-item" href="https://www.linkedin.com/in/ons-bahri" target="_blank" rel="noopener"><svg class="i"><use href="#i-linkedin"/></svg><div><small>LinkedIn</small><b>in/ons-bahri</b></div></a>
+                <a class="contact-item" href="assets/cv/CV_Ons-Bahri.pdf" download><svg class="i"><use href="#i-download"/></svg><div><small>CV (PDF)</small><b>Download my CV</b></div></a>
+              </div>
+            </div>
           </div>
-          <div class="contact-list">
-            <a class="contact-item" href="mailto:ons.b@outlook.com?subject=Opportunity%20-%20Embedded%20%2F%20IoT%20Engineer"><svg class="i"><use href="#i-mail"/></svg><div><small>Email</small><b>ons.b@outlook.com</b></div></a>
-            <a class="contact-item" href="tel:+33660054369"><svg class="i"><use href="#i-phone"/></svg><div><small>Phone</small><b>+33 6 60 05 43 69</b></div></a>
-            <a class="contact-item" href="https://www.linkedin.com/in/ons-bahri" target="_blank" rel="noopener"><svg class="i"><use href="#i-linkedin"/></svg><div><small>LinkedIn</small><b>in/ons-bahri</b></div></a>
-            <a class="contact-item" href="assets/cv/CV_Ons-Bahri.pdf" download><svg class="i"><use href="#i-download"/></svg><div><small>CV (PDF)</small><b>Download my CV</b></div></a>
+          <div class="bcard-wrap reveal">
+            <div class="bcard-float">
+              <span class="bcard-shadow" aria-hidden="true"></span>
+              <button class="bcard" type="button" aria-label="My business card — click to flip" aria-pressed="false">
+                <span class="bcard-inner">
+                  <span class="bcard-face front"><img src="assets/img/card-recto.webp" alt="Ons Bahri's business card, front" width="963" height="624" loading="lazy"><span class="glare"></span></span>
+                  <span class="bcard-face back"><img src="assets/img/card-verso.webp" alt="Ons Bahri's business card, back" width="963" height="624" loading="lazy"><span class="glare"></span></span>
+                </span>
+              </button>
+            </div>
+            <span class="bcard-hint" aria-hidden="true">Click to flip</span>
           </div>
         </div>
       </div>
@@ -409,6 +431,6 @@
 
   <button class="to-top" aria-label="Back to top"><svg class="i"><use href="#i-up"/></svg></button>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2"></script>
 </body>
 </html>
