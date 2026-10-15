@@ -9,52 +9,78 @@
   if (canvas && canvas.getContext) {
     var ctx = canvas.getContext("2d");
     var colors = ["68,88,220", "133,79,238", "236,127,176"];
-    var nodes = [], w, h, dpr, linkDist, mouse = { x: -9999, y: -9999 };
+    var nodes = [], w = 0, h = 0, dpr, linkDist, margin, last = 0, mouse = { x: -9999, y: -9999 };
 
+    function makeNode(i) {
+      var ang = Math.random() * Math.PI * 2, speed = .012 + Math.random() * .014; // px per ms
+      return {
+        x: Math.random() * (w + 2 * margin) - margin, y: Math.random() * (h + 2 * margin) - margin,
+        vx: Math.cos(ang) * speed, vy: Math.sin(ang) * speed,
+        r: Math.random() * 1.8 + 1.2,
+        c: colors[i % colors.length],
+        p: Math.random() * Math.PI * 2
+      };
+    }
+
+    // Resizing keeps the existing network (scaled to the new size) instead of rebuilding it,
+    // so the mobile address bar showing/hiding never restarts the animation.
     function resize() {
+      var ow = w, oh = h;
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       w = window.innerWidth; h = window.innerHeight;
       canvas.width = w * dpr; canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       linkDist = Math.min(170, Math.max(110, w / 9));
-      var count = Math.round(Math.min(70, Math.max(26, (w * h) / 22000)));
-      nodes = [];
-      for (var i = 0; i < count; i++) {
-        nodes.push({
-          x: Math.random() * w, y: Math.random() * h,
-          vx: (Math.random() - .5) * .28, vy: (Math.random() - .5) * .28,
-          r: Math.random() * 1.8 + 1.2,
-          c: colors[i % colors.length],
-          p: Math.random() * Math.PI * 2
-        });
-      }
+      margin = linkDist;
+      if (ow && oh) nodes.forEach(function (n) { n.x *= w / ow; n.y *= h / oh; });
+      var count = Math.round(Math.min(95, Math.max(34, ((w + 2 * margin) * (h + 2 * margin)) / 22000)));
+      while (nodes.length < count) nodes.push(makeNode(nodes.length));
+      if (nodes.length > count) nodes.length = count;
+      if (reduceMotion) draw(0);
+    }
+
+    // 0 near/outside the viewport edge, 1 inside: nodes fade out before wrapping around,
+    // so they never pop in or out.
+    function edgeFade(n) {
+      var d = Math.min(n.x, w - n.x, n.y, h - n.y);
+      return Math.max(0, Math.min(1, (d + margin * .2) / (margin * .8)));
     }
 
     function draw(t) {
+      var dt = last ? Math.min(t - last, 50) : 16;
+      last = t;
       ctx.clearRect(0, 0, w, h);
-      for (var i = 0; i < nodes.length; i++) {
-        var a = nodes[i];
-        if (!reduceMotion) {
-          a.x += a.vx; a.y += a.vy;
-          if (a.x < -20) a.x = w + 20; else if (a.x > w + 20) a.x = -20;
-          if (a.y < -20) a.y = h + 20; else if (a.y > h + 20) a.y = -20;
+      var i, a;
+      if (!reduceMotion) {
+        for (i = 0; i < nodes.length; i++) {
+          a = nodes[i];
+          a.x += a.vx * dt; a.y += a.vy * dt;
+          if (a.x < -margin) a.x += w + 2 * margin; else if (a.x > w + margin) a.x -= w + 2 * margin;
+          if (a.y < -margin) a.y += h + 2 * margin; else if (a.y > h + margin) a.y -= h + 2 * margin;
         }
+      }
+      for (i = 0; i < nodes.length; i++) a = nodes[i], a.f = edgeFade(a);
+      ctx.lineWidth = 1;
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        if (a.f <= 0) continue;
         for (var j = i + 1; j < nodes.length; j++) {
-          var b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
+          var b = nodes[j];
+          if (b.f <= 0) continue;
+          var dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
           if (d < linkDist) {
-            ctx.strokeStyle = "rgba(" + a.c + "," + (0.16 * (1 - d / linkDist)).toFixed(3) + ")";
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = "rgba(" + a.c + "," + (0.16 * (1 - d / linkDist) * Math.min(a.f, b.f)).toFixed(3) + ")";
             ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
           }
         }
         // gentle pull-in of links toward the cursor
         var mx = a.x - mouse.x, my = a.y - mouse.y, md = Math.sqrt(mx * mx + my * my);
         if (md < 180) {
-          ctx.strokeStyle = "rgba(" + a.c + "," + (0.22 * (1 - md / 180)).toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(" + a.c + "," + (0.22 * (1 - md / 180) * a.f).toFixed(3) + ")";
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
         }
         var pulse = reduceMotion ? 1 : 1 + Math.sin(t / 900 + a.p) * .25;
-        ctx.fillStyle = "rgba(" + a.c + ",.55)";
+        ctx.fillStyle = "rgba(" + a.c + "," + (.55 * a.f).toFixed(3) + ")";
         ctx.beginPath(); ctx.arc(a.x, a.y, a.r * pulse, 0, Math.PI * 2); ctx.fill();
       }
       if (!reduceMotion) requestAnimationFrame(draw);
